@@ -10,4 +10,5 @@ class JCPerson(models.Model):
 class JCBook(models.Model):
     id = models.BigIntegerField(primary_key=True, unique=True, null=False)
     name = models.CharField(max_length=127, null=False)
+    owner = models.ForeignKey(JCPerson, related_name='使用人')
 

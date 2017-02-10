@@ -2,6 +2,7 @@
 
 from django.shortcuts import render
 from django.http import HttpResponse
+from django.core import serializers
 
 from .models import JCBook
 
@@ -35,6 +36,9 @@ def browse(request):
 	# JCBook.objects.filter(name="yingyu").order_by("id")
 
 	# 输出所有数据
+	result={}
+	result['content'] = list
+	result['content2'] = list.toj
 	#for var in list:
 	#	response += var.name + " " + str(var.id) + " "
-	return render(request, 'dbform.html', {'content':list})
+	return render(request, 'dbform.html', result)
