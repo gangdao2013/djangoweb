@@ -5,6 +5,13 @@
     <title>db access</title>
 </head>
 <body>
-    <h1>{{ mainForm }}</h1>
+    <table border="1">
+        {% for item in content %}
+            <tr >
+                <td>{{item.id}}</td>
+                <td>{{item.name}}</td>
+            </tr>
+        {% endfor %}
+    </table>
 </body>
 </html>

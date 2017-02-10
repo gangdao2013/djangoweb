@@ -35,6 +35,6 @@ def browse(request):
 	# JCBook.objects.filter(name="yingyu").order_by("id")
 
 	# 输出所有数据
-	for var in list:
-		response += var.name + " " + str(var.id) + " "
-	return render(request, 'dbform.html', {'mainForm':response})
+	#for var in list:
+	#	response += var.name + " " + str(var.id) + " "
+	return render(request, 'dbform.html', {'content':list})
