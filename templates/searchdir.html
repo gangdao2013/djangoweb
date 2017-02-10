@@ -1,0 +1,29 @@
+﻿<html>
+<head>
+	<meta charset="utf-8" /> 
+    <title>Search - dir</title>
+</head>
+<body>
+    <form action="/form/" method='post'>
+        {% csrf_token %}
+        {{ form }}
+        <input type="submit" value="求和计算">
+    </form>
+
+    <form action="/search/" method="get">
+        <input type="text" name="q">
+        <input type="submit" value="搜索">
+    </form>
+
+	<form action="/search_post/" method="post">
+		{% csrf_token %}
+		<input type="text" name="q">
+		<input type="submit" value="提交">
+	</form>
+	<ul>
+		{% for athlete in search_post_result %}
+		<li>{{ athlete }}</li>
+		{% endfor %}
+	</ul>
+</body>
+</html>
