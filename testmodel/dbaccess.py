@@ -1,16 +1,50 @@
 # -*- coding: utf-8 -*-
 
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from django.core import serializers
 
 from .models import JCBook
+from .models import JCPerson
+
 
 # 数据库操作
-def add(request):
-	one = JCBook(name='yingyu')
-	one.save()
-	return HttpResponse("<p>数据添加成功！</p>")
+def addBook(request):
+	request.encoding='utf-8'
+	if 'name' in request.GET:
+		bookName = request.GET['name']
+		if not bookName:
+			return HttpResponse('书名不应为空')
+
+		ownerId = request.GET['owner']
+		owner = JCPerson.objects.get(id=ownerId)
+		bookId=0
+		for var in JCBook.objects.order_by("id"):
+			if bookId < var.id:
+				bookId = var.id
+		bookId += 1
+		book = JCBook(id=bookId, name=request.GET['name'], owner=owner)
+		book.save()
+	return redirect(browse)
+
+def addBookOwner(request):
+	request.encoding='utf-8'
+	if 'name' in request.GET:
+		bookOwner = request.GET['name']
+		if not bookOwner:
+			return HttpResponse('书籍拥有者不应为空')
+
+		owner = JCPerson.objects.filter(name=bookOwner)
+		if owner:
+			return HttpResponse('书籍拥有者'+bookOwner+'已存在')
+		ownerId=0
+		for var in JCPerson.objects.order_by("id"):
+			if ownerId < var.id:
+				ownerId = var.id
+		ownerId += 1
+		person = JCPerson(id=ownerId, name=bookOwner)
+		person.save()
+	return redirect(browse)
 
 def browse(request):
 	# 初始化
@@ -37,8 +71,8 @@ def browse(request):
 
 	# 输出所有数据
 	result={}
-	result['content'] = list
-	result['content2'] = list.toj
+	result['books'] = list
+	result['persons'] = JCPerson.objects.all()
 	#for var in list:
 	#	response += var.name + " " + str(var.id) + " "
 	return render(request, 'dbform.html', result)

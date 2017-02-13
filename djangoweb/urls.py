@@ -17,18 +17,24 @@ from django.conf.urls import url
 from django.contrib import admin
 
 from testmodel import dbaccess
-from weig import views, searchdir
+from weig import views, searchdir, formexam
+from django.views.generic import TemplateView
 
 urlpatterns = [
-    url('^$', views.main),
-    url('^dir/$', searchdir.index),
+    url(r'^$',TemplateView.as_view(template_name = 'login.html')),
+    url(r'^loginResult', views.login, name="login_commit"),
 
+    url('^dir/$', TemplateView.as_view(template_name = 'searchdir.html')),
     url('^search/$', searchdir.search),
     url('^search_post/$', searchdir.search_post),
-    url('^form/$', searchdir.formExample),
 
-    url('^dbadd/$', dbaccess.add),
+    url('^formExample/$', TemplateView.as_view(template_name = 'formExam.html')),
+    url('^form/$', formexam.formExample),
+    url('^form2/$', formexam.formExample2),
+
     url('^accessDB/$', dbaccess.browse),
+    url('^addBook/$', dbaccess.addBook),
+    url('^addBookOwner/$', dbaccess.addBookOwner),
 
     url(r'^admin/', admin.site.urls),
 ]
