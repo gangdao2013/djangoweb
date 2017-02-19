@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>库(oo)</title>
+</head>
+
+<style type="text/css">
+	table {
+	padding: 0 0 5px 0;
+	width: 450px;
+	font: italic 11px "Trebuchet MS", Verdana, Arial, Helvetica, sans-serif;
+	text-align: right;
+	}
+	td {
+	border:1px solid #c1dad7;
+
+	padding: 6px 6px 6px 12px;
+	color: #7732e4;
+	text-align: center;
+	width:150px;
+	}
+</style>
+<body>
+        {% for item in owners %}
+            <a  href={{item.id}}>
+            <tr>
+                <td >{{item.name}}</td>
+            </tr>
+            </a>
+        {% endfor %}
+    <li>书目列表</li>
+    <table class="mytable" border="1">
+        <tr >
+            <td>序号</td>
+            <td>书名</td>
+            <td>拥有者</td>
+        </tr>
+        {% for item in books %}
+            <tr >
+                <td>{{item.id}}</td>
+                <td>{{item.name}}</td>
+                <td>{{item.owner.name}}</td>
+            </tr>
+        {% endfor %}
+    </table>
+     <div class="news">
+         <h2>增加书籍拥有者</h2>
+         <form action="/addBookOwner_oo/" method="get">
+            <p>书籍拥有者
+                <input type="text" name="name">
+                <input type="submit" value="创建">
+            </p>
+         </form>
+     </div>
+     <div class="news">
+         <h2>增加书籍</h2>
+         <form action="/addBook_oo/" method="get">
+            <p>书名
+                <input type="text" name="name">
+                拥有者
+                <select name="owner">
+                    {% for p in owners %}
+                        <option value ="{{ p.id }}">{{ p.name }}</option>
+                    {% endfor %}
+                </select>
+                <input type="submit" value="创建">
+            </p>
+         </form>
+     </div>
+</body>
+</html>

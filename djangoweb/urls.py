@@ -17,6 +17,7 @@ from django.conf.urls import url
 from django.contrib import admin
 
 from testmodel import dbaccess
+from testmodel.views import TestModelView
 from weig import views, searchdir, formexam
 from django.views.generic import TemplateView
 
@@ -35,6 +36,11 @@ urlpatterns = [
     url('^accessDB/$', dbaccess.browse),
     url('^addBook/$', dbaccess.addBook),
     url('^addBookOwner/$', dbaccess.addBookOwner),
+
+    url('^accessDB_oo/$', TestModelView.as_view()),
+    url('^accessDB_oo/([\w-]+)/$', TestModelView.as_view()),
+    url('^addBook_oo/$', TestModelView.as_view()),
+    url('^addBookOwner_oo/$', TestModelView.as_view()),
 
     url(r'^admin/', admin.site.urls),
 ]
