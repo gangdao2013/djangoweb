@@ -3,6 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <title>库(oo)</title>
+    <script>
+        function goBack() {
+          window.history.back()
+        }
+        function home(loc) {
+            window.location.assign(loc)
+        }
+     </script>
 </head>
 
 <style type="text/css">
@@ -22,8 +30,12 @@
 	}
 </style>
 <body>
+        <input type="button" value="主页" onclick="home('{{ home_page }}')" align="left">
+        <input type="button" value="<--" onclick="goBack()" align="left">
+
+    <li>持有者</li>
         {% for item in owners %}
-            <a  href={{item.id}}>
+            <a  href={% url 'accessDB_BookOfOwner_oo' id=item.id %}>
             <tr>
                 <td >{{item.name}}</td>
             </tr>

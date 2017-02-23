@@ -20,8 +20,17 @@ from testmodel import dbaccess
 from testmodel.views import TestModelView
 from weig import views, searchdir, formexam
 from django.views.generic import TemplateView
+from django.views import static
+from . import settings
 
 urlpatterns = [
+
+    url(r'^static/(?P<path>.*)$', static.serve, {'document_root': settings.STATIC_URL}),
+    # 如果没有建static文件夹，而是直接在根目录下建立的JS,CSS和Images文件夹，就将下面的三行代码注释去掉，删除上方的代码
+    url( r'^js/(?P<path>.*)$', static.serve,{ 'document_root': settings.STATIC_URL }),
+    url( r'^css/(?P<path>.*)$', static.serve, { 'document_root': settings.STATIC_URL }),
+    url( r'^images/(?P<path>.*)$', static.serve, { 'document_root': settings.STATIC_URL }),
+
     url(r'^$',TemplateView.as_view(template_name = 'login.html')),
     url(r'^loginResult', views.login, name="login_commit"),
 
@@ -38,7 +47,8 @@ urlpatterns = [
     url('^addBookOwner/$', dbaccess.addBookOwner),
 
     url('^accessDB_oo/$', TestModelView.as_view()),
-    url('^accessDB_oo/([\w-]+)/$', TestModelView.as_view()),
+    url('^accessDB_oo/([\w-]+)/$', TestModelView.as_view(), name="accessDB_book_oo"),
+    url('^accessDB_oo/(?P<id>[0-9]+)/$', TestModelView.as_view(), name="accessDB_BookOfOwner_oo"),
     url('^addBook_oo/$', TestModelView.as_view()),
     url('^addBookOwner_oo/$', TestModelView.as_view()),
 

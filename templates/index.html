@@ -1,13 +1,21 @@
 ﻿<html>
   <head>
-    <title>test</title>
+      <title>test</title>
+      <script src="/static/js/jquery-3.1.1.min.js"></script>
+      <script>
+            function myFunction() {
+                $("#haa").attr("style","color:red")
+            }
+            $(document).ready(myFunction);
+      </script>
   </head>
 
   <body>
-    <h1>{{ good }}</h1>
+    <h1 id="haa">{{ good }}</h1>
+
     <a href="dir">查看目录</a>
     <a href="formExample">表单测例</a>
     <a href="accessDB">访问库</a>
-    <a href="accessDB_oo">访问库(oo)</a>
   </body>
+    <a href="accessDB_oo">访问库(oo)</a>
 </html>

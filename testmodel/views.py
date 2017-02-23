@@ -1,8 +1,9 @@
 from django.views.generic import ListView
 from django.shortcuts import get_object_or_404
-from django.http import HttpResponse
+from django.http import HttpResponse,HttpResponseRedirect
 from django.shortcuts import render, redirect
 from .models import JCBook,JCPerson
+from django.core.urlresolvers import reverse
 
 
 class TestModelView(ListView):
@@ -15,11 +16,12 @@ class TestModelView(ListView):
         context = super(TestModelView, self).get_context_data(**kwargs)
         # Add in the publisher
         context['owners'] = JCPerson.objects.all()
+        context['home_page'] = 'http://127.0.0.1/'
         return context
 
     def get_queryset(self):
-        if self.args and self.args[0]:
-            self.owner = get_object_or_404(JCPerson, id=self.args[0])
+        if self.args and self.args[0]!="-1":
+                self.owner = get_object_or_404(JCPerson, id=self.args[0])
         else:
             self.owner = JCPerson.objects.all()
         return JCBook.objects.filter(owner= self.owner)
@@ -28,15 +30,16 @@ class TestModelView(ListView):
     def get(self, request, *args, **kwargs):
         if "addBookOwner_oo" in request.path:
             self.addBookOwner(request)
-            redirect(super().get(request, args, kwargs))
+            return  HttpResponseRedirect(reverse("accessDB_book_oo", args={-1}))
         elif "addBook_oo" in request.path:
-            self.addBook(request)
-            redirect(super().get(request, args, kwargs))
+            ownerId=self.addBook(request)
+            return  HttpResponseRedirect(reverse("accessDB_book_oo", args={ownerId}))
         return super().get(request, args, kwargs)
 
 
     def addBook(self, request):
         request.encoding = 'utf-8'
+        ownerId=1
         if 'name' in request.GET:
             bookName = request.GET['name']
             if not bookName:
@@ -51,6 +54,7 @@ class TestModelView(ListView):
             bookId += 1
             book = JCBook(id=bookId, name=request.GET['name'], owner=owner)
             book.save()
+        return ownerId
 
     def addBookOwner(self, request):
         request.encoding = 'utf-8'
