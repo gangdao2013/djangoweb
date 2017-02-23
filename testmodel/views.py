@@ -3,6 +3,7 @@ from django.shortcuts import get_object_or_404
 from django.http import HttpResponse,HttpResponseRedirect
 from django.shortcuts import render, redirect
 from .models import JCBook,JCPerson
+from djangoweb import settings
 from django.core.urlresolvers import reverse
 
 
@@ -16,7 +17,7 @@ class TestModelView(ListView):
         context = super(TestModelView, self).get_context_data(**kwargs)
         # Add in the publisher
         context['owners'] = JCPerson.objects.all()
-        context['home_page'] = 'http://127.0.0.1/'
+        context['home_page'] = 'http://'+ settings.ALLOWED_HOSTS[0]
         return context
 
     def get_queryset(self):
