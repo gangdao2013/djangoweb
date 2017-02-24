@@ -7,8 +7,8 @@
         function goBack() {
           window.history.back()
         }
-        function home(loc) {
-            window.location.assign(loc)
+        function home() {
+            window.location.assign('{{ home_page }}')
         }
      </script>
 </head>
@@ -30,7 +30,7 @@
 	}
 </style>
 <body>
-        <input type="button" value="主页" onclick="home('{{ home_page }}')" align="left">
+        <input type="button" value="主页" onclick="home()" align="left">
         <input type="button" value="<--" onclick="goBack()" align="left">
 
     <li>持有者</li>

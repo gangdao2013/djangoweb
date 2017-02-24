@@ -38,6 +38,8 @@ urlpatterns = [
     url('^search/$', searchdir.search),
     url('^search_post/$', searchdir.search_post),
 
+    url('^test_ajax/$', formexam.test_ajax, name='test_ajax'),
+
     url('^formExample/$', TemplateView.as_view(template_name = 'formExam.html')),
     url('^form/$', formexam.formExample),
     url('^form2/$', formexam.formExample2),
