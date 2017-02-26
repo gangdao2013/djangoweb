@@ -1,0 +1,79 @@
+﻿<html>
+  <head>
+      <title>Ajax Exam</title>
+      <script src="/static/js/jquery-3.1.1.min.js"></script>
+      <script>
+          function getCookie(name) {
+                var cookieValue = null;
+                if (document.cookie && document.cookie !== '') {
+                    var cookies = document.cookie.split(';');
+                    for (var i = 0; i < cookies.length; i++) {
+                        var cookie = jQuery.trim(cookies[i]);
+                        // Does this cookie string begin with the name we want?
+                        if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                            cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                            break;
+                        }
+                    }
+                }
+                return cookieValue;
+            }
+              function csrfSafeMethod(method) {
+                // these HTTP methods do not require CSRF protection
+                return (/^(GET|HEAD|OPTIONS|TRACE)$/.test(method));
+                }
+            $.ajaxSetup({
+                beforeSend: function(xhr, settings) {
+                    if (!csrfSafeMethod(settings.type) && !this.crossDomain) {
+                        var csrftoken = getCookie('csrftoken');
+                        xhr.setRequestHeader("X-CSRFToken", csrftoken);
+                    }
+                }
+            });
+            function myFunction() {
+                $("#haa").attr("style","color:red")
+                $("h1").append(" {{ good }}");
+
+                $("#test").click(function () {
+                    $.getJSON("{% url 'test_ajax'%}", function(ret){
+                        $('#result').html(ret.twz)
+                    })
+                })
+
+                $('#testPost').click(function(){
+                    var data_list=[{'name':'wuyi', 'age':80},
+                        {'name':'wanggang', 'age':72}]
+                    $.ajax(
+                            {url:"{% url 'test_ajax_post' %}",
+                                type:'POST',
+                                data:{persons:JSON.stringify(data_list)},
+                                success:function(rst){
+                                    var conts='<table id="mytable" border="1">';
+                                    jQuery.each(rst.info, function(i,item){
+                                        conts+=('<tr>')
+                                        conts+=('<td>'+item.name+'</td>')
+                                        conts+=('<td>'+item.Age+'</td>')
+                                        conts+=('</tr>')
+                                    })
+                                    conts+=('</table>')
+                                     $('#mytable').remove()
+                                    $('#resultPost').append(conts)
+                                }
+                            })
+                })
+            }
+            $(document).ready(myFunction);
+      </script>
+  </head>
+
+  <body>
+    <h1 id="haa">{{ good }}</h1>
+    <p>
+        <input type="button" value="getJSON" id='test' align="left">
+        <p>result: <span id='result'></span></p>
+
+        <input type="button" value="postAjax" id='testPost' align="left">
+        <p id='resultPost'>结果:</p>
+    </p>
+  </body>
+</html>

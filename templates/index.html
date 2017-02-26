@@ -6,12 +6,6 @@
             function myFunction() {
                 $("#haa").attr("style","color:red")
                 $("h1").append(" {{ good }}");
-
-                $("#test").click(function () {
-                    $.getJSON("{% url 'test_ajax'%}", function(ret){
-                        $('#result').html(ret.twz)
-                    })
-                })
             }
             $(document).ready(myFunction);
       </script>
@@ -19,12 +13,12 @@
 
   <body>
     <h1 id="haa">{{ good }}</h1>
-        <input type="button" value="主页" id='test' align="left">
-        <p>result: <span id='result'></span></p>
-
-    <a href="dir">查看目录</a>
-    <a href="formExample">表单测例</a>
-    <a href="accessDB">访问库</a>
+    <p>
+        <a href="dir">查看目录</a>
+        <a href="formExample">表单例子</a>
+        <a href="accessDB">访问库</a>
+        <a href="accessDB_oo">访问库(oo)</a>
+        <a href="ajaxExam">ajax例子</a>
+    </p>
   </body>
-    <a href="accessDB_oo">访问库(oo)</a>
 </html>

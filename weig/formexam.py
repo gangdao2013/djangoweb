@@ -3,11 +3,6 @@
 from django.http import HttpResponse
 from django.shortcuts import render
 from .forms import AddForm
-from django.http import JsonResponse
-
-def test_ajax(request):
-    name_dict = {'twz': 'Love python and Django', 'zqxt': 'I am teaching Django'}
-    return JsonResponse(name_dict)
 
 def formExample(request):
     if request.method == 'POST':# 当提交表单时

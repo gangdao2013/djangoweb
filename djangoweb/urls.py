@@ -18,7 +18,7 @@ from django.contrib import admin
 
 from testmodel import dbaccess
 from testmodel.views import TestModelView
-from weig import views, searchdir, formexam
+from weig import views, searchdir, formexam, ajaxexam
 from django.views.generic import TemplateView
 from django.views import static
 from . import settings
@@ -38,7 +38,9 @@ urlpatterns = [
     url('^search/$', searchdir.search),
     url('^search_post/$', searchdir.search_post),
 
-    url('^test_ajax/$', formexam.test_ajax, name='test_ajax'),
+    url('^ajaxExam/$', TemplateView.as_view(template_name = 'ajaxExam.html'), name='ajaxExam'),
+    url('^test_ajax/$', ajaxexam.test_ajax, name='test_ajax'),
+    url('^test_ajaxPost/$', ajaxexam.test_ajax_post, name='test_ajax_post'),
 
     url('^formExample/$', TemplateView.as_view(template_name = 'formExam.html')),
     url('^form/$', formexam.formExample),
