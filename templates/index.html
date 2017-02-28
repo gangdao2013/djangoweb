@@ -9,16 +9,18 @@
             }
             $(document).ready(myFunction);
       </script>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/mystyle.css' %}" />
   </head>
 
   <body>
+    <img src="{% static "images/deng.jpg" %}" alt="My image"/>
     <h1 id="haa">{{ good }}</h1>
-    <p>
-        <a href="dir">查看目录</a>
-        <a href="formExample">表单例子</a>
-        <a href="accessDB">访问库</a>
-        <a href="accessDB_oo">访问库(oo)</a>
-        <a href="ajaxExam">ajax例子</a>
-    </p>
+    <p><a href="dir">查看目录</a></p>
+    <p><a href="formExample">表单例子</a></p>
+    <p><a href="accessDB">访问库</a></p>
+    <p><a href="accessDB_oo">访问库(oo)</a></p>
+    <p><a href="ajaxExam">ajax例子</a></p>
+
   </body>
 </html>

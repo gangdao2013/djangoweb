@@ -1,0 +1,13 @@
+p a {
+    color: green;
+}
+
+body {
+    background: white url("../images/goldcock.jpg") no-repeat right;background-size:60% 80%;
+}
+img{
+    width: auto;
+    height: auto;
+    max-width: 30%;
+    max-height: 30%;
+}
