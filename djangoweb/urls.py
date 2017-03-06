@@ -57,7 +57,7 @@ urlpatterns = [
     url('^addBookOwner_oo/$', TestModelView.as_view()),
 
 
-    url(r'^image/(?P<width>[0-9]+)x(?P<height>[0-9]+)/$', placeholder, name='placeholder'),
+     url(r'^image/(?P<width>[0-9]+)x(?P<height>[0-9]+)/$', placeholder.placeholder, name='placeholder'),
 
     url(r'^admin/', admin.site.urls),
 ]

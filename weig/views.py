@@ -1,13 +1,10 @@
 
 # -*- coding: utf-8 -*-
 
+from django.core.urlresolvers import reverse
 from django.shortcuts import render
 from .loginForm import LoginFormShow
 from django.http import HttpResponse
-import os
-
-def main(request):
-    return render(request, 'index.html', {'good':'Good Luck!'})
 
 def login(request):
     info = "not logged in"
@@ -18,7 +15,12 @@ def login(request):
 
         if MyLoginForm.is_valid():
             username = MyLoginForm.cleaned_data['username']
-            return render(request, 'index.html', {'good': '欢迎' + username})
+            example = reverse('placeholder', kwargs={'width': 50, 'height':50})
+            context = {
+                'good':'欢迎' + username,
+                'example': request.build_absolute_uri(example)
+            }
+            return render(request, 'index.html', context)
         else:
             info='invalid'
     else:

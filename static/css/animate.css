@@ -11,14 +11,14 @@
 h1 {
   animation: fadeOut 5s ease;
   animation-fill-mode: forwards;
-  animation-iteration-count: infinite;
+  animation-iteration-count: 2;
 }
 
-img {
+body ul img {
   animation: steps;
   animation-duration: 4s;
   animation-timing-function: cubic-bezier(10, 10, 100, 90);
-  animation-iteration-count: infinite;
+  animation-iteration-count: 1;
   width: 120px;
   height: 120px;
 }

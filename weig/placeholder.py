@@ -6,12 +6,8 @@ from io import BytesIO
 from PIL import Image, ImageDraw
 
 from django import forms
-from django.conf.urls import url
 from django.core.cache import cache
-from django.core.urlresolvers import reverse
-from django.core.wsgi import get_wsgi_application
 from django.http import HttpResponse, HttpResponseBadRequest
-from django.shortcuts import render
 from django.views.decorators.http import etag
 
 
@@ -35,7 +31,7 @@ class ImageForm(forms.Form):
             if textwidth < width and textheight < height:
                 texttop = (height - textheight) // 2
                 textleft = (width - textwidth) // 2
-                draw.text((textleft, texttop), text, fill=(255, 255, 255))
+                draw.text((textleft, texttop), text, fill=(255, 1, 1))
             content = BytesIO()
             image.save(content, image_format)
             content.seek(0)
@@ -56,12 +52,3 @@ def placeholder(request, width, height):
         return HttpResponse(image, content_type='image/png')
     else:
         return HttpResponseBadRequest('Invalid Image Request')
-
-
-def index(request):
-    example = reverse('placeholder', kwargs={'width': 50, 'height':50})
-    context = {
-        'example': request.build_absolute_uri(example)
-    }
-    return render(request, 'index.html', context)
-
