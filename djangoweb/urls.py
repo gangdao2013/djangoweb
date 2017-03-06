@@ -18,7 +18,7 @@ from django.contrib import admin
 
 from testmodel import dbaccess
 from testmodel.views import TestModelView
-from weig import views, searchdir, formexam, ajaxexam
+from weig import views, searchdir, formexam, ajaxexam, placeholder
 from django.views.generic import TemplateView
 from django.views import static
 from . import settings
@@ -55,6 +55,9 @@ urlpatterns = [
     url('^accessDB_oo/(?P<id>[0-9]+)/$', TestModelView.as_view(), name="accessDB_BookOfOwner_oo"),
     url('^addBook_oo/$', TestModelView.as_view()),
     url('^addBookOwner_oo/$', TestModelView.as_view()),
+
+
+    url(r'^image/(?P<width>[0-9]+)x(?P<height>[0-9]+)/$', placeholder, name='placeholder'),
 
     url(r'^admin/', admin.site.urls),
 ]
