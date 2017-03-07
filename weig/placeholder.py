@@ -24,7 +24,8 @@ class ImageForm(forms.Form):
         key = '{}.{}.{}'.format(width, height, image_format)
         content = cache.get(key)
         if content is None:
-            image = Image.new('RGB', (width, height))
+            """image = Image.new('RGB', (width, height))"""
+            image = Image.open('static/images/logo.jpg')
             draw = ImageDraw.Draw(image)
             text = '{} X {}'.format(width, height)
             textwidth, textheight = draw.textsize(text)
