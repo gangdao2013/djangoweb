@@ -122,5 +122,6 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATICFILES_DIRS = (
     #动态的获取static文件的路径
-    os.path.join(os.path.dirname(__file__), '../static/').replace('\\','/'),
+    os.path.join(BASE_DIR, '../static/').replace('\\','/'),
 )
+SITE_PAGES_DIRECTORY=os.path.join(BASE_DIR, 'templates/chapter2/pages')

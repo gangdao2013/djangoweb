@@ -22,6 +22,7 @@ from chapter1 import placeholder
 from testmodel import dbaccess
 from testmodel.views import TestModelView
 from weig import views, searchdir, formexam, ajaxexam
+from chapter2 import views_ch2
 from . import settings
 
 urlpatterns = [
@@ -57,9 +58,11 @@ urlpatterns = [
     url('^addBook_oo/$', TestModelView.as_view()),
     url('^addBookOwner_oo/$', TestModelView.as_view()),
 
-
     url('^chapter1/$', placeholder.entry),
      url(r'^image/(?P<width>[0-9]+)x(?P<height>[0-9]+)/$', placeholder.placeholder, name='placeholder'),
+
+    url(r'^chapter2/(?P<slug>[\w./-]+)/$', views_ch2.page, name='page'),
+    url(r'^chapter2/$', views_ch2.page, name='homepage'),
 
     url(r'^admin/', admin.site.urls),
 ]
