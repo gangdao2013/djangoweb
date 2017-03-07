@@ -15,12 +15,13 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
+from django.views import static
+from django.views.generic import TemplateView
 
+from chapter1 import placeholder
 from testmodel import dbaccess
 from testmodel.views import TestModelView
-from weig import views, searchdir, formexam, ajaxexam, placeholder
-from django.views.generic import TemplateView
-from django.views import static
+from weig import views, searchdir, formexam, ajaxexam
 from . import settings
 
 urlpatterns = [
@@ -57,6 +58,7 @@ urlpatterns = [
     url('^addBookOwner_oo/$', TestModelView.as_view()),
 
 
+    url('^chapter1/$', placeholder.entry),
      url(r'^image/(?P<width>[0-9]+)x(?P<height>[0-9]+)/$', placeholder.placeholder, name='placeholder'),
 
     url(r'^admin/', admin.site.urls),

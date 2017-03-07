@@ -5,10 +5,12 @@ import sys
 from io import BytesIO
 from PIL import Image, ImageDraw
 
+from django.core.urlresolvers import reverse
 from django import forms
 from django.core.cache import cache
 from django.http import HttpResponse, HttpResponseBadRequest
 from django.views.decorators.http import etag
+from django.shortcuts import render
 
 
 class ImageForm(forms.Form):
@@ -53,3 +55,10 @@ def placeholder(request, width, height):
         return HttpResponse(image, content_type='image/png')
     else:
         return HttpResponseBadRequest('Invalid Image Request')
+
+def entry(request):
+    example = reverse('placeholder', kwargs={'width': 50, 'height':50})
+    context = {
+        'example': request.build_absolute_uri(example)
+    }
+    return render(request, 'chapter1/entry.html', context)
