@@ -18,7 +18,7 @@ def get_page_or_404(name):
         if not os.path.exists(file_path):
             raise Http404('Page Not Found')
    
-    with open(file_path, 'r') as f:
+    with open(file_path, 'r', encoding='utf-8') as f:
         page = Template(f.read())
     return page
 
@@ -30,5 +30,6 @@ def page(request, slug='index'):
     context = {
         'slug': slug,
         'page': page,
+        'show':'Insert content by template'
     }
     return render(request, 'chapter2/page.html', context)
