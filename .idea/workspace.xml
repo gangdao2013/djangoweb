@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="5ac879fb-2d03-4258-a59f-9838a0c59095" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/chapter2/views_ch2.py" afterPath="$PROJECT_DIR$/chapter2/views_ch2.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/chapter2/base.html" afterPath="$PROJECT_DIR$/templates/chapter2/base.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/chapter2/pages/pricing.html" afterPath="$PROJECT_DIR$/templates/chapter2/pages/pricing.html" />
     </list>
     <ignored path="djangoweb.iws" />
@@ -63,8 +64,8 @@
       <file leaf-file-name="base.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/chapter2/base.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-8.214286">
-              <caret line="37" column="63" selection-start-line="37" selection-start-column="63" selection-end-line="37" selection-end-column="63" />
+            <state vertical-scroll-proportion="-24.5">
+              <caret line="40" column="25" selection-start-line="40" selection-start-column="25" selection-end-line="40" selection-end-column="25" />
               <folding />
             </state>
           </provider>
@@ -93,8 +94,8 @@
       <file leaf-file-name="pricing.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/templates/chapter2/pages/pricing.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.96067417">
-              <caret line="27" column="20" selection-start-line="27" selection-start-column="20" selection-end-line="27" selection-end-column="20" />
+            <state vertical-scroll-proportion="0.035580523">
+              <caret line="1" column="1" selection-start-line="1" selection-start-column="1" selection-end-line="3" selection-end-column="42" />
               <folding />
             </state>
           </provider>
@@ -104,7 +105,7 @@
         <entry file="file://$PROJECT_DIR$/chapter2/views_ch2.py">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="24" column="68" selection-start-line="24" selection-start-column="57" selection-end-line="24" selection-end-column="68" />
+              <caret line="24" column="64" selection-start-line="24" selection-start-column="64" selection-end-line="24" selection-end-column="64" />
               <folding />
             </state>
           </provider>
@@ -199,8 +200,8 @@
         <option value="$PROJECT_DIR$/templates/login.html" />
         <option value="$PROJECT_DIR$/templates/chapter2/page.html" />
         <option value="$PROJECT_DIR$/templates/chapter2/pages/contact.html" />
-        <option value="$PROJECT_DIR$/templates/chapter2/base.html" />
         <option value="$PROJECT_DIR$/templates/chapter2/pages/login.html" />
+        <option value="$PROJECT_DIR$/templates/chapter2/base.html" />
         <option value="$PROJECT_DIR$/chapter2/views_ch2.py" />
         <option value="$PROJECT_DIR$/templates/chapter2/pages/pricing.html" />
       </list>
@@ -826,7 +827,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="0" width="1378" height="735" extended-state="1" />
+    <frame x="-7" y="0" width="1378" height="735" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1828528" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
@@ -1225,14 +1226,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/chapter2/base.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-8.214286">
-          <caret line="37" column="63" selection-start-line="37" selection-start-column="63" selection-end-line="37" selection-end-column="63" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/chapter2/page.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-2.0357144">
@@ -1241,18 +1234,26 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/templates/chapter2/base.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-24.5">
+          <caret line="40" column="25" selection-start-line="40" selection-start-column="25" selection-end-line="40" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/chapter2/views_ch2.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="24" column="68" selection-start-line="24" selection-start-column="57" selection-end-line="24" selection-end-column="68" />
+          <caret line="24" column="64" selection-start-line="24" selection-start-column="64" selection-end-line="24" selection-end-column="64" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/chapter2/pages/pricing.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.96067417">
-          <caret line="27" column="20" selection-start-line="27" selection-start-column="20" selection-end-line="27" selection-end-column="20" />
+        <state vertical-scroll-proportion="0.035580523">
+          <caret line="1" column="1" selection-start-line="1" selection-start-column="1" selection-end-line="3" selection-end-column="42" />
           <folding />
         </state>
       </provider>
