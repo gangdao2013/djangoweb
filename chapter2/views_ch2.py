@@ -22,7 +22,7 @@ def get_page_or_404(name):
         page = Template(f.read())
     meta = None
     for i, node in enumerate(list(page.nodelist)):
-        if isinstance(node, BlockNode) and node.name == 'context':
+        if isinstance(node, BlockNode) and node.name == 'dynamic':
             meta = page.nodelist.pop(i)
             break
     page._meta = meta
