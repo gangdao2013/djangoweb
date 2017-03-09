@@ -20,6 +20,12 @@ def get_page_or_404(name):
    
     with open(file_path, 'r', encoding='utf-8') as f:
         page = Template(f.read())
+    meta = None
+    for i, node in enumerate(list(page.nodelist)):
+        if isinstance(node, BlockNode) and node.name == 'contextJson':
+            meta = page.nodelist.pop(i)
+            break
+    page._meta = meta
     return page
 
 
@@ -32,4 +38,8 @@ def page(request, slug='index'):
         'page': page,
         'show':'Insert content by template'
     }
+    if page._meta is not None:
+    	meta = page._meta.render(Context())
+    	extra_context = json.loads(meta)
+    	context.update(extra_context)
     return render(request, 'chapter2/page.html', context)
