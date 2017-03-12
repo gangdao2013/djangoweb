@@ -13,10 +13,11 @@ Including another URLconf
     1. Import the include() function: from django.conf.urls import url, include
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
-from django.conf.urls import url
+from django.conf.urls import include, url
 from django.contrib import admin
 from django.views import static
 from django.views.generic import TemplateView
+from rest_framework.authtoken.views import obtain_auth_token
 
 from chapter1 import placeholder
 from testmodel import dbaccess
@@ -24,6 +25,7 @@ from testmodel.views import TestModelView
 from weig import views, searchdir, formexam, ajaxexam
 from chapter2 import views_ch2
 from . import settings
+from board.urls import router
 
 urlpatterns = [
 
@@ -65,4 +67,7 @@ urlpatterns = [
     url(r'^chapter2/$', views_ch2.page, name='homepage'),
 
     url(r'^admin/', admin.site.urls),
+
+    url(r'^api/token/', obtain_auth_token, name='api-token'),
+    url(r'^api/', include(router.urls)),
 ]
