@@ -13,6 +13,15 @@ class NullFilter(django_filters.BooleanFilter):
             return qs.filter(**{'%s__isnull' % self.name: value})
         return qs
 
+class SprintFilter(django_filters.FilterSet):
+
+    end_min = django_filters.DateFilter(name='end', lookup_expr='gte')
+    end_max = django_filters.DateFilter(name='end', lookup_expr='lte')
+
+    class Meta:
+        model = Sprint
+        fields = ('end_min', 'end_max', )
+
 class TaskFilter(django_filters.FilterSet):
 
     backlog = NullFilter(name='sprint')

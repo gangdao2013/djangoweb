@@ -66,7 +66,7 @@ urlpatterns = [
     url(r'^chapter2/(?P<slug>[\w./-]+)/$', views_ch2.page, name='page'),
     url(r'^chapter2/$', views_ch2.page, name='homepage'),
 
-    url(r'^admin/', admin.site.urls),
+    #url(r'^admin/', admin.site.urls),
 
     url(r'^api/token/', obtain_auth_token, name='api-token'),
     url(r'^api/', include(router.urls)),
