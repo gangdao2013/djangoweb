@@ -91,6 +91,7 @@ class TaskSerializer(serializers.ModelSerializer):
         if completed and status != Task.STATUS_DONE:
             msg = _('Completed date cannot be set for uncompleted tasks.')
             raise serializers.ValidationError(msg)
+        return attrs
 
 class UserSerializer(serializers.ModelSerializer):
 
