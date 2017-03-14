@@ -5,9 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5ac879fb-2d03-4258-a59f-9838a0c59095" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/js/board/app.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/board/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/js/board/router.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/js/board/views.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/djangoweb/urls.py" afterPath="$PROJECT_DIR$/djangoweb/urls.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/js/board/app.js" afterPath="$PROJECT_DIR$/static/js/board/app.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/board/index.html" afterPath="$PROJECT_DIR$/templates/board/index.html" />
     </list>
     <ignored path="djangoweb.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -46,7 +49,7 @@
         <entry file="file://$PROJECT_DIR$/djangoweb/urls.py">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="37" column="57" selection-start-line="37" selection-start-column="52" selection-end-line="37" selection-end-column="57" />
+              <caret line="73" column="71" selection-start-line="73" selection-start-column="71" selection-end-line="73" selection-end-column="71" />
               <folding>
                 <element signature="e#643#684#0" expanded="true" />
               </folding>
@@ -66,11 +69,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/board/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.4829932">
-              <caret line="21" column="31" selection-start-line="21" selection-start-column="31" selection-end-line="21" selection-end-column="31" />
+            <state vertical-scroll-proportion="-5.428571">
+              <caret line="14" column="32" selection-start-line="14" selection-start-column="32" selection-end-line="14" selection-end-column="32" />
               <folding />
             </state>
           </provider>
@@ -80,7 +83,37 @@
         <entry file="file://$PROJECT_DIR$/static/js/board/app.js">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+              <caret line="1" column="30" selection-start-line="1" selection-start-column="30" selection-end-line="1" selection-end-column="30" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="views.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/static/js/board/views.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-1.2666667">
+              <caret line="2" column="36" selection-start-line="2" selection-start-column="32" selection-end-line="2" selection-end-column="36" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="backbone.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/static/js/backbone.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="1230" column="6" selection-start-line="1230" selection-start-column="6" selection-end-line="1230" selection-end-column="6" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="router.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/static/js/board/router.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.31367925">
+              <caret line="7" column="45" selection-start-line="7" selection-start-column="45" selection-end-line="7" selection-end-column="45" />
               <folding />
             </state>
           </provider>
@@ -105,18 +138,6 @@
               <caret line="39" column="30" selection-start-line="39" selection-start-column="30" selection-end-line="39" selection-end-column="30" />
               <folding>
                 <element signature="e#0#35#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="forms.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/board/forms.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="17" column="62" selection-start-line="17" selection-start-column="62" selection-end-line="17" selection-end-column="62" />
-              <folding>
-                <element signature="e#1#22#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -211,8 +232,10 @@
         <option value="$PROJECT_DIR$/board/forms.py" />
         <option value="$PROJECT_DIR$/board/serializers.py" />
         <option value="$PROJECT_DIR$/djangoweb/urls.py" />
-        <option value="$PROJECT_DIR$/templates/board/index.html" />
         <option value="$PROJECT_DIR$/static/js/board/app.js" />
+        <option value="$PROJECT_DIR$/static/js/board/views.js" />
+        <option value="$PROJECT_DIR$/static/js/board/router.js" />
+        <option value="$PROJECT_DIR$/templates/board/index.html" />
       </list>
     </option>
   </component>
@@ -482,18 +505,18 @@
     <property name="list.type.of.created.stylesheet" value="CSS" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\dev\djangoweb\templates\chapter2" />
+      <recent name="D:\dev\djangoweb\chapter2" />
+      <recent name="D:\dev\djangoweb\chapter1" />
+      <recent name="F:\djangoweb\model" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\dev\djangoweb\static\js\board" />
       <recent name="D:\dev\djangoweb\board" />
       <recent name="D:\dev\djangoweb\templates\chapter2\pages" />
       <recent name="D:\dev\djangoweb\chapter2" />
       <recent name="D:\dev\djangoweb\static\css\chapter2" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\dev\djangoweb\templates\chapter2" />
-      <recent name="D:\dev\djangoweb\chapter2" />
-      <recent name="D:\dev\djangoweb\chapter1" />
-      <recent name="F:\djangoweb\model" />
     </key>
   </component>
   <component name="RunManager" selected="Django server.djangoweb">
@@ -811,15 +834,15 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="0" width="1370" height="735" extended-state="0" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19007634" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19312978" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32890365" sideWeight="0.4969651" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17275748" sideWeight="0.23129772" order="0" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2475083" sideWeight="0.23587786" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.05496183" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32890365" sideWeight="0.48778626" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32890365" sideWeight="0.49389312" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.17275748" sideWeight="0.76870227" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2475083" sideWeight="0.7641221" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32890365" sideWeight="0.49389312" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
@@ -872,27 +895,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://C:/Python34/Lib/site-packages/Django-1.10.5-py3.4.egg/django/views/generic/list.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="177" column="54" selection-start-line="177" selection-start-column="54" selection-end-line="177" selection-end-column="54" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://C:/Python34/Lib/site-packages/Django-1.10.5-py3.4.egg/django/core/handlers/base.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="183" column="16" selection-start-line="183" selection-start-column="16" selection-end-line="183" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://C:/Python34/Lib/site-packages/Django-1.10.5-py3.4.egg/django/urls/resolvers.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="391" column="0" selection-start-line="391" selection-start-column="0" selection-end-line="391" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://C:/Python34/Lib/site-packages/Django-1.10.5-py3.4.egg/django/conf/urls/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1164,7 +1166,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.22699386">
           <caret line="34" column="20" selection-start-line="34" selection-start-column="12" selection-end-line="34" selection-end-column="20" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1180,7 +1181,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.201373">
           <caret line="65" column="72" selection-start-line="65" selection-start-column="72" selection-end-line="65" selection-end-column="72" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1224,24 +1224,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/djangoweb/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="37" column="57" selection-start-line="37" selection-start-column="52" selection-end-line="37" selection-end-column="57" />
-          <folding>
-            <element signature="e#643#684#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/js/board/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/board/urls.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1252,10 +1234,52 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/djangoweb/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="73" column="71" selection-start-line="73" selection-start-column="71" selection-end-line="73" selection-end-column="71" />
+          <folding>
+            <element signature="e#643#684#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/js/board/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="1" column="30" selection-start-line="1" selection-start-column="30" selection-end-line="1" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/js/backbone.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="1230" column="6" selection-start-line="1230" selection-start-column="6" selection-end-line="1230" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/js/board/views.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.2666667">
+          <caret line="2" column="36" selection-start-line="2" selection-start-column="32" selection-end-line="2" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/templates/board/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4829932">
-          <caret line="21" column="31" selection-start-line="21" selection-start-column="31" selection-end-line="21" selection-end-column="31" />
+        <state vertical-scroll-proportion="-5.428571">
+          <caret line="14" column="32" selection-start-line="14" selection-start-column="32" selection-end-line="14" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/js/board/router.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.31367925">
+          <caret line="7" column="45" selection-start-line="7" selection-start-column="45" selection-end-line="7" selection-end-column="45" />
           <folding />
         </state>
       </provider>

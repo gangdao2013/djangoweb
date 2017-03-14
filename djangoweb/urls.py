@@ -70,4 +70,6 @@ urlpatterns = [
 
     url(r'^scrum/token/', obtain_auth_token, name='api-token'),
     url(r'^scrum/', include(router.urls)),
+
+    url(r'^ss/$',TemplateView.as_view(template_name = 'board/index.html')),
 ]
